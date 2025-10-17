@@ -165,7 +165,7 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
       {/* // head : */}
       <div className={`h-[5vh] flex ${isDarkMode ? 'bg-slate-800 text-white' : 'bg-gray-200 text-black'}`}>
         <div className="w-[65vw] flex items-center border-r-3 border-black justify-between pr-4">
-          <h1 className={`text-lg font-bold p-3 ${isDarkMode ? 'bg-slate-800' : 'bg-slate-700 text-gray-50'}`}>
+          <h1 className={`text-lg font-bold p-3 px-5 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-600 text-gray-100'}`}>
             {fileExtensions[selectedLanguage] || "Main.txt"}
           </h1>
           <div className="flex gap-10">
@@ -174,7 +174,7 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
             <button
               onClick={handleRun}
               disabled={isRunning}
-              className={`scale-155 px-7 py-1 cursor-pointer rounded flex items-center justify-center ${isRunning
+              className={`scale-150 px-7 py-1 cursor-pointer  flex items-center justify-center ${isRunning
                   ? isDarkMode ? 'bg-blue-700 cursor-not-allowed' : 'bg-blue-600 cursor-not-allowed'
                   : isDarkMode
                     ? 'bg-blue-700 hover:bg-blue-800'
@@ -189,11 +189,11 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
             </button>
           </div>
         </div>
-        <div className="flex items-center justify-between w-[35vw] px-3">
+        <div className="flex items-center justify-between w-[35vw] pl-3">
           <div className="font-semibold">Output</div>
-          <div className="flex gap-5 items-center">
+          <div className="flex gap-5 items-center ">
             <button onClick={handleCopyOutput} className={`cursor-pointer ${isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}><FaCopy /></button>
-            <button onClick={handleClearOutput} className={`font-semibold cursor-pointer ${isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}>Clear</button>
+            <button onClick={handleClearOutput} className={`p-2 px-3 font-semibold cursor-pointer ${isDarkMode ? 'hover:text-blue-100 bg-slate-700 ' : 'hover:text-slate-200 bg-slate-600 text-white'}`}>Clear</button>
           </div>
         </div>
       </div>
