@@ -21,7 +21,7 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
   };
   
   return (
-    <div className='h-[8vh] flex items-center justify-between px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white shadow-lg'>
+    <div className='h-[8vh] flex items-center justify-between px-10 py-5 bg-blue-950 text-white shadow-lg'>
         <div className='font-bold text-xl tracking-tight flex items-center gap-2'>
             <span className='bg-white text-blue-700 px-3 py-1 rounded-lg shadow-md'>AI</span>
             <span>Compiler</span>

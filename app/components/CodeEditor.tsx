@@ -121,7 +121,7 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
 
   const handleRun = async () => {
     setIsRunning(true);
-    setOutput("Running code...");
+    setOutput("");
 
     try {
       const response = await fetch('/api/execute', {
@@ -163,7 +163,7 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
   return (
     <div>
       {/* // head : */}
-      <div className={`h-[5vh] flex ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'}`}>
+      <div className={`h-[5vh] flex ${isDarkMode ? 'bg-slate-800 text-white' : 'bg-gray-200 text-black'}`}>
         <div className="w-[65vw] flex items-center border-r-3 border-black justify-between pr-4">
           <h1 className={`text-lg font-bold p-3 ${isDarkMode ? 'bg-slate-800' : 'bg-slate-700 text-gray-50'}`}>
             {fileExtensions[selectedLanguage] || "Main.txt"}
@@ -175,10 +175,10 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
               onClick={handleRun}
               disabled={isRunning}
               className={`scale-155 px-7 py-1 cursor-pointer rounded flex items-center justify-center ${isRunning
-                  ? isDarkMode ? 'bg-blue-700 cursor-not-allowed' : 'bg-slate-800 cursor-not-allowed'
+                  ? isDarkMode ? 'bg-blue-700 cursor-not-allowed' : 'bg-blue-600 cursor-not-allowed'
                   : isDarkMode
-                    ? 'bg-blue-700 hover:bg-blue-600'
-                    : 'bg-gray-800 hover:bg-gray-900 text-white'
+                    ? 'bg-blue-700 hover:bg-blue-800'
+                    : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
             >
               {isRunning ? (
