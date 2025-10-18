@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div>
-      <CodeEditor 
+      <CodeEditor
         selectedLanguage={selectedLanguage} 
         isDarkMode={isDarkMode}
       />
