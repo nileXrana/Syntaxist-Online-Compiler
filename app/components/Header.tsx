@@ -47,7 +47,7 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
             </select>
             <button 
               onClick={handleThemeToggle}
-              className='cursor-pointer hover:scale-110 hover:rotate-12 transition-all duration-300 flex items-center gap-2 bg-white/10 hover:bg-white/20 p-2 rounded-lg backdrop-blur-sm border border-white/20 shadow-md'
+              className='cursor-pointer hover:scale-110 hover:rotate-90 transition-all duration-300 flex items-center gap-2 bg-white/10 hover:bg-white/20 p-2 rounded-lg backdrop-blur-sm border border-white/20 shadow-md'
               title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
               {isDarkMode ? (
