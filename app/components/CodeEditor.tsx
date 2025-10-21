@@ -1,12 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Editor, { OnChange, OnMount } from "@monaco-editor/react";
 import React from 'react'
 import { FaCopy } from "react-icons/fa";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import TerminalBox from "./Terminal";
-
+import TerminalBox, { TerminalHandle } from "./Terminal";
 
 interface CodeEditorProps {
   selectedLanguage: string;
@@ -99,6 +98,8 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
   const [code, setCode] = useState<string>(defaultCode[selectedLanguage] || "// write your code here...");
   const [output, setOutput] = useState<string>("");
   const [isRunning, setIsRunning] = useState<boolean>(false);
+  const terminalRef = useRef<TerminalHandle>(null);
+  const [terminalKey, setTerminalKey] = useState<number>(0);
 
   // Update code when language changes
   useEffect(() => {
@@ -122,6 +123,9 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
 
   const handleRun = async () => {
     setIsRunning(true);
+    
+    // Clear terminal by re-rendering it
+    setTerminalKey(prev => prev + 1);
     setOutput("");
 
     try {
@@ -151,14 +155,15 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
   };
 
   const handleCopyOutput = async () => {
-    if (output) {
-      await navigator.clipboard.writeText(output);
-      alert("Output copied!");
+    if (terminalRef.current) {
+      terminalRef.current.copyTerminalContent();
+      alert("Terminal content copied!");
     }
   };
 
   const handleClearOutput = () => {
-    setOutput("");
+    // Re-render terminal by changing key
+    setTerminalKey(prev => prev + 1);
   };
 
   return (
@@ -198,7 +203,9 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
           </div>
         </div>
       </div>
-      {/* editor and output : */}
+
+  
+      {/* editor and terminal : */}
       <div className="flex ">
         <div className={`h-[87vh] w-[60vw] border-1 ${isDarkMode ? 'border-r-sky-50' : 'border-black'}`}>
           <Editor
@@ -213,14 +220,15 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
             }}
           />
         </div>
-        {/* output div */}
-        {/* <div className={`h-[87vh] w-[35vw] border-sky-300 p-4 overflow-auto ${isDarkMode ? 'bg-black text-gray-300' : 'bg-gray-100 text-black'
-          }`}>
-          <pre className="whitespace-pre-wrap font-mono text-xs leading-relaxed">
-            {output}
-          </pre>
-        </div> */}
-        <TerminalBox  />
+        <div>
+          <TerminalBox 
+            output={output} 
+            key={terminalKey} 
+            ref={terminalRef} 
+            isDarkMode={isDarkMode}
+            selectedLanguage={selectedLanguage}
+          />
+        </div>
       </div>
 
     </div>
