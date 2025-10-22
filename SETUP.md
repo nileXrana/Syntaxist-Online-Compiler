@@ -1,6 +1,6 @@
 # AI Compiler Setup Guide
 
-This guide will help you set up the AI Compiler with WebSocket-based code execution using Docker containers.
+This guide will help you set up the AI Compiler with WebSocket-based code execution using Docker containers:
 
 ## Prerequisites
 
