@@ -1,0 +1,64 @@
+"use client";
+import React from 'react'
+import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
+import { MdDarkMode } from "react-icons/md";
+import { CiDark } from "react-icons/ci";
+
+interface HeaderProps {
+  selectedLanguage: string;
+  setSelectedLanguage: (language: string) => void;
+  isDarkMode: boolean;
+  setIsDarkMode: (isDark: boolean) => void;
+}
+
+const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMode }: HeaderProps) => {
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedLanguage(e.target.value);
+  };
+
+  const handleThemeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  
+  return (
+    <div className='h-[8vh] flex items-center justify-between px-10 py-5 bg-blue-900 text-white shadow-lg'>
+        <div className='font-bold text-xl tracking-tight flex items-center gap-2'>
+            <span className='bg-white text-blue-700 px-3 py-1 rounded-lg shadow-md'>AI</span>
+            <span>Compiler</span>
+        </div>
+        <div className='flex items-center justify-between gap-5'>
+            <select 
+              className='px-4 py-2 rounded-lg text-white bg-blue-800/50 backdrop-blur-sm border border-blue-500/100 hover:bg-blue-800/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200 cursor-pointer font-medium shadow-md'
+              value={selectedLanguage}
+              onChange={handleLanguageChange}
+            >
+                <option value="python" className='bg-blue-900'>Python</option>
+                <option value="javascript" className='bg-blue-900'>JavaScript</option>
+                <option value="cpp" className='bg-blue-900'>C++</option>
+                <option value="java" className='bg-blue-900'>Java</option>
+                <option value="go" className='bg-blue-900'>Go</option>
+                <option value="ruby" className='bg-blue-900'>Ruby</option>
+                <option value="php" className='bg-blue-900'>PHP</option>
+                <option value="csharp" className='bg-blue-900'>C#</option>
+                <option value="typescript" className='bg-blue-900'>TypeScript</option>
+                <option value="swift" className='bg-blue-900'>Swift</option>
+                <option value="kotlin" className='bg-blue-900'>Kotlin</option>
+                <option value="rust" className='bg-blue-900'>Rust</option>
+            </select>
+            <button 
+              onClick={handleThemeToggle}
+              className='cursor-pointer hover:scale-110 hover:rotate-90 transition-all duration-300 flex items-center gap-2 bg-white/10 hover:bg-white/20 p-2 rounded-lg backdrop-blur-sm border border-white/20 shadow-md'
+              title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            >
+              {isDarkMode ? (
+                <CiDark className='scale-[2]' />
+              ) : (
+                <MdDarkMode className='scale-[2]' />
+              )}
+            </button>
+        </div>
+    </div>
+  )
+}
+
+export default Header
