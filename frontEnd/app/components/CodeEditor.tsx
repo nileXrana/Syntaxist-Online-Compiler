@@ -171,8 +171,8 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
               className={`scale-150 px-7 py-1 cursor-pointer  flex items-center justify-center ${isRunning
                 ? isDarkMode ? 'bg-blue-700 cursor-not-allowed' : 'bg-blue-600 cursor-not-allowed'
                 : isDarkMode
-                  ? 'bg-blue-700 hover:bg-blue-800'
-                  : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  ? 'bg-blue-700'
+                  : 'bg-blue-600 text-white'
                 }`}
             >
               {isRunning ? (
