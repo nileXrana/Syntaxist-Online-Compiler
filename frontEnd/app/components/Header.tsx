@@ -5,6 +5,7 @@ import { MdDarkMode } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
 import { HiLightBulb } from "react-icons/hi";
+import { AiOutlineThunderbolt } from "react-icons/ai";
 
 interface HeaderProps {
   selectedLanguage: string;
@@ -44,11 +45,11 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
                 </button>
                 <button
                     onClick={onSuggestionsClick}
-                    className='flex items-center gap-2 px-3 py-1.5 bg-amber-500 hover:bg-amber-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105'
-                    title='Get Code Suggestions'
+                    className='flex items-center gap-2 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105'
+                    title='Optimize Code (TC/SC)'
                 >
-                    <HiLightBulb className='text-lg' />
-                    <span>Suggestions</span>
+                    <AiOutlineThunderbolt className='text-lg' />
+                    <span>Optimize</span>
                 </button>
             </div>
         </div>

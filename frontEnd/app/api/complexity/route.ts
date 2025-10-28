@@ -25,9 +25,9 @@ export async function POST(request: NextRequest) {
 
     const prompt = `Analyze the following ${language} code and provide:
 
-1. **Time Complexity**: Explain the time complexity with Big O notation
-2. **Space Complexity**: Explain the space complexity with Big O notation
-3. **Brief Explanation**: Why this is the complexity (1-2 sentences each)
+1. **Time Complexity**: 
+2. **Space Complexity**: 
+in Big O notation. do not give any explanations. just one line each.
 
 Format your response in clear sections with headings.
 

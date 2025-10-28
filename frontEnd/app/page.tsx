@@ -11,7 +11,7 @@ export default function Home() {
   const [popupContent, setPopupContent] = useState<string>("");
   const [popupTitle, setPopupTitle] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [analysisType, setAnalysisType] = useState<'complexity' | 'suggestions'>('complexity');
+  const [analysisType, setAnalysisType] = useState<'complexity' | 'suggestions' | 'optimize'>('complexity');
   
   const codeEditorRef = useRef<any>(null);
 
@@ -60,8 +60,8 @@ export default function Home() {
       return;
     }
 
-    setAnalysisType('suggestions');
-    setPopupTitle("Code Improvement Suggestions");
+    setAnalysisType('optimize');
+    setPopupTitle("Code Optimization Analysis");
     setPopupContent("");
     setIsPopupOpen(true);
     setIsLoading(true);
@@ -78,7 +78,7 @@ export default function Home() {
       if (response.ok) {
         setPopupContent(data.suggestions);
       } else {
-        setPopupContent(`**Error**: ${data.error || 'Failed to get suggestions'}`);
+        setPopupContent(`**Error**: ${data.error || 'Failed to analyze optimization'}`);
       }
     } catch (error: any) {
       setPopupContent(`**Error**: ${error.message || 'Network error occurred'}`);

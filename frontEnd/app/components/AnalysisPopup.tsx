@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { AiOutlineClose, AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineLoading3Quarters, AiOutlineThunderbolt } from 'react-icons/ai';
 import { FiClock, FiDatabase } from 'react-icons/fi';
 import { HiLightBulb } from 'react-icons/hi';
 
@@ -11,7 +11,7 @@ interface AnalysisPopupProps {
   title: string;
   content: string;
   isLoading: boolean;
-  type: 'complexity' | 'suggestions';
+  type: 'complexity' | 'suggestions' | 'optimize';
 }
 
 const AnalysisPopup = ({ isOpen, onClose, title, content, isLoading, type }: AnalysisPopupProps) => {
@@ -20,6 +20,9 @@ const AnalysisPopup = ({ isOpen, onClose, title, content, isLoading, type }: Ana
   const getIcon = () => {
     if (type === 'complexity') {
       return <FiClock className="text-3xl" />;
+    }
+    if (type === 'optimize') {
+      return <AiOutlineThunderbolt className="text-3xl" />;
     }
     return <HiLightBulb className="text-3xl" />;
   };

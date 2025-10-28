@@ -23,22 +23,23 @@ export async function POST(request: NextRequest) {
 
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const prompt = `Analyze the following ${language} code and provide helpful suggestions for improvement:
+    const prompt = `Analyze the following ${language} code and determine if it can be optimized in terms of Time Complexity (TC) and Space Complexity (SC).
 
-1. **Code Quality**: Best practices, readability improvements
-2. **Performance**: Optimization opportunities
-3. **Security**: Potential vulnerabilities or unsafe patterns
-4. **Refactoring**: Better ways to structure the code
-5. **Modern Features**: Language-specific modern syntax/features to use
+**Instructions:**
+1. Determine if the code can be further optimized to achieve better TC or SC
+2. If optimization is possible:
+   - explain the optimizations that can be made in brief and short, nothing else.
+3. If the code is already optimal:
+   - State clearly and give response of one line only, nothing else : "✅ This code is already optimized"
 
-Be specific, actionable, and concise. Format with clear headings.
+Be honest and accurate. Don't suggest optimizations if they don't actually improve TC/SC.
 
 Code:
 \`\`\`${language}
 ${code}
 \`\`\`
 
-Provide practical, implementable suggestions.`;
+Provide your analysis:`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
