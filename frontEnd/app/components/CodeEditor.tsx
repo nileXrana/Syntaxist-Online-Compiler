@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Editor, { OnChange, OnMount } from "@monaco-editor/react";
+import TerminalBox, { TerminalHandle } from "./Terminal";
 import React from 'react'
 import { FaCopy } from "react-icons/fa";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import TerminalBox, { TerminalHandle } from "./Terminal";
 
 interface CodeEditorProps {
   selectedLanguage: string;
@@ -113,7 +113,7 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
 
   const handleMount: OnMount = (editor, monaco) => {
     editor.focus(); // auto-focus on load
-    console.log("Monaco mounted:", editor);
+    // console.log("Monaco mounted:", editor);
   };
 
   const handleCopy = async () => {
@@ -123,10 +123,10 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
 
   const handleRun = async () => {
     setIsRunning(true);
-    
+
     // Run code via WebSocket
     terminalRef.current?.runCode(code, selectedLanguage);
-    
+
     // Set isRunning to false after a short delay to show the loading animation
     setTimeout(() => {
       setIsRunning(false);
@@ -160,10 +160,10 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
               onClick={handleRun}
               disabled={isRunning}
               className={`scale-150 px-7 py-1 cursor-pointer  flex items-center justify-center ${isRunning
-                  ? isDarkMode ? 'bg-blue-700 cursor-not-allowed' : 'bg-blue-600 cursor-not-allowed'
-                  : isDarkMode
-                    ? 'bg-blue-700 hover:bg-blue-800'
-                    : 'bg-blue-600 hover:bg-blue-700 text-white'
+                ? isDarkMode ? 'bg-blue-700 cursor-not-allowed' : 'bg-blue-600 cursor-not-allowed'
+                : isDarkMode
+                  ? 'bg-blue-700 hover:bg-blue-800'
+                  : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
             >
               {isRunning ? (
@@ -183,27 +183,27 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
         </div>
       </div>
 
-  
+
       {/* editor and terminal : */}
       <div className="flex ">
         <div className={`h-[87vh] w-[60vw] border-1 ${isDarkMode ? 'border-r-sky-50' : 'border-black'}`}>
           <Editor
             height="100%"
-            language={monacoLanguages[selectedLanguage] || "javascript"}
+            language={monacoLanguages[selectedLanguage] || "java"}
             theme={isDarkMode ? "vs-dark" : "vs-light"}
             value={code}
             onChange={handleChange}
             onMount={handleMount}
             options={{
-              fontSize: 14, // 👈 change this value
+              fontSize: 15, // 👈 
             }}
           />
         </div>
         <div>
-          <TerminalBox 
-            output={output} 
-            key={terminalKey} 
-            ref={terminalRef} 
+          <TerminalBox
+            output={output}
+            key={terminalKey}
+            ref={terminalRef}
             isDarkMode={isDarkMode}
             selectedLanguage={selectedLanguage}
           />
