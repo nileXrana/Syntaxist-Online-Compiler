@@ -120,7 +120,7 @@ const AnalysisPopup = ({ isOpen, onClose, title, content, isLoading, type }: Ana
             <div className="flex items-center justify-between">
               <p className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-2">
                 <span>✨</span>
-                Powered by Google Gemini AI
+                AI Compiler
               </p>
               <button
                 onClick={onClose}
