@@ -158,7 +158,7 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
     <div>
       {/* // head : */}
       <div className={`h-[5vh] flex ${isDarkMode ? 'bg-slate-800 text-white' : 'bg-gray-200 text-black'}`}>
-        <div className="w-[60vw] flex items-center border-r-3  justify-between pr-4">
+        <div className="w-[65vw] flex items-center border-r-3  justify-between pr-4">
           <h1 className={`text-lg font-bold p-3 px-5 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-600 text-gray-100'}`}>
             {fileExtensions[selectedLanguage] || "Main.txt"}
           </h1>
@@ -183,7 +183,7 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
             </button>
           </div>
         </div>
-        <div className="flex items-center justify-between w-[40vw] pl-3">
+        <div className="flex items-center justify-between w-[35vw] pl-3">
           <div className="font-semibold">Output</div>
           <div className="flex gap-5 items-center ">
             <button onClick={handleCopyOutput} className={`cursor-pointer ${isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}><FaCopy /></button>
@@ -195,7 +195,7 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
 
       {/* editor and terminal : */}
       <div className="flex ">
-        <div className={`h-[87vh] w-[60vw] border-1 ${isDarkMode ? 'border-r-sky-50' : 'border-black'}`}>
+        <div className={`h-[87vh] w-[65vw] ${isDarkMode ? 'border-r border-r-sky-50' : 'border-r border-r-black'}`}>
           <Editor
             height="100%"
             language={monacoLanguages[selectedLanguage] || "java"}

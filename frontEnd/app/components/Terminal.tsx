@@ -292,7 +292,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
     <div
       ref={terminalRef}
       className={`overflow-hidden pl-1 ${isDarkMode ? 'bg-[#1e1e1e]' : 'bg-white'}`}
-      style={{ height: "87vh", width: "40vw" }}
+      style={{ height: "87vh", width: "35vw" }}
     />
   );
 });
