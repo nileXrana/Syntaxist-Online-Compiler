@@ -25,65 +25,68 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
   const handleThemeToggle = () => {
     setIsDarkMode(!isDarkMode);
   };
-  
+
   return (
-    <div className='h-[8vh] flex items-center justify-between px-4 py-5 bg-blue-700 text-white shadow-lg'>
+    <div className='h-[8vh] flex items-center justify-between pr-3 py-5 bg-blue-700 text-white shadow-lg'>
       {/* 2 less than editor's width */}
-        <div className='flex items-center justify-between w-[63vw]'>
-            <div className='font-bold text-xl tracking-tight flex items-center gap-2'>
-                <Image src="/logo2.png" alt="Logo" width={60} height={60} className='border'/>
-                <span>Compiler</span>
-            </div>
-            
-            {/* Analysis Buttons */}
-            <div className='flex items-center gap-3'>
-                <button
-                    onClick={onComplexityClick}
-                    className='cursor-pointer flex items-center gap-2 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110'
-                    title='Analyze Time & Space Complexity'
-                >
-                    <FiClock className='text-lg' />
-                    <span>TC / SC</span>
-                </button>
-                <button
-                    onClick={onSuggestionsClick}
-                    className='cursor-pointer flex items-center gap-2 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110'
-                    title='Optimize Code with AI'
-                >
-                    <AiOutlineThunderbolt className='text-lg' />
-                    <span>Optimize</span>
-                </button>
-            </div>
+      <div className='flex items-center justify-between w-[63vw]'>
+        <div className='font-bold text-xl tracking-tight flex items-center'>
+          <Image src="/logo2.png" alt="Logo" width={60} height={60} className='border' />
+          <div className='flex flex-col items-center justify-center'>
+            <span>Syntaxist</span>
+            <span className='text-xs'>Online Compiler</span>
+          </div>
         </div>
-        <div className='flex items-center justify-between gap-5'>
-            <select 
-              className='px-4 py-2 rounded-lg text-white bg-blue-800/50 backdrop-blur-sm border border-blue-500/100 hover:bg-blue-800/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200 cursor-pointer font-medium shadow-md'
-              value={selectedLanguage}
-              onChange={handleLanguageChange}
-            >
-                <option value="python" className='bg-blue-900'>Python</option>
-                <option value="javascript" className='bg-blue-900'>JavaScript</option>
-                <option value="cpp" className='bg-blue-900'>C++</option>
-                <option value="java" className='bg-blue-900'>Java</option>
-                <option value="go" className='bg-blue-900'>Go</option>
-                <option value="ruby" className='bg-blue-900'>Ruby</option>
-                <option value="php" className='bg-blue-900'>PHP</option>
-                <option value="csharp" className='bg-blue-900'>C#</option>
-                <option value="swift" className='bg-blue-900'>Swift</option>
-                <option value="rust" className='bg-blue-900'>Rust</option>
-            </select>
-            <button 
-              onClick={handleThemeToggle}
-              className='cursor-pointer hover:scale-110 hover:rotate-90 transition-all duration-300 flex items-center gap-2 bg-white/10 hover:bg-white/20 p-2 rounded-lg backdrop-blur-sm border border-white/20 shadow-md'
-              title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            >
-              {isDarkMode ? (
-                <CiDark className='scale-[2]' />
-              ) : (
-                <MdDarkMode className='scale-[2]' />
-              )}
-            </button>
+
+        {/* Analysis Buttons */}
+        <div className='flex items-center gap-3'>
+          <button
+            onClick={onComplexityClick}
+            className='cursor-pointer flex items-center gap-2 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110'
+            title='Analyze Time & Space Complexity'
+          >
+            <FiClock className='text-lg' />
+            <span>TC / SC</span>
+          </button>
+          <button
+            onClick={onSuggestionsClick}
+            className='cursor-pointer flex items-center gap-2 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110'
+            title='Optimize Code with AI'
+          >
+            <AiOutlineThunderbolt className='text-lg' />
+            <span>Optimize</span>
+          </button>
         </div>
+      </div>
+      <div className='flex items-center justify-between gap-5'>
+        <select
+          className='px-4 py-2 rounded-lg text-white bg-blue-800/50 backdrop-blur-sm border border-blue-500/100 hover:bg-blue-800/70 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200 cursor-pointer font-medium shadow-md'
+          value={selectedLanguage}
+          onChange={handleLanguageChange}
+        >
+          <option value="python" className='bg-blue-900'>Python</option>
+          <option value="javascript" className='bg-blue-900'>JavaScript</option>
+          <option value="cpp" className='bg-blue-900'>C++</option>
+          <option value="java" className='bg-blue-900'>Java</option>
+          <option value="go" className='bg-blue-900'>Go</option>
+          <option value="ruby" className='bg-blue-900'>Ruby</option>
+          <option value="php" className='bg-blue-900'>PHP</option>
+          <option value="csharp" className='bg-blue-900'>C#</option>
+          <option value="swift" className='bg-blue-900'>Swift</option>
+          <option value="rust" className='bg-blue-900'>Rust</option>
+        </select>
+        <button
+          onClick={handleThemeToggle}
+          className='cursor-pointer hover:scale-110 hover:rotate-90 transition-all duration-300 flex items-center gap-2 bg-white/10 hover:bg-white/20 p-2 rounded-lg backdrop-blur-sm border border-white/20 shadow-md'
+          title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        >
+          {isDarkMode ? (
+            <CiDark className='scale-[2]' />
+          ) : (
+            <MdDarkMode className='scale-[2]' />
+          )}
+        </button>
+      </div>
     </div>
   )
 }
