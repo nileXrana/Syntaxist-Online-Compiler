@@ -5,12 +5,14 @@ import fs from "fs";
 import path from "path";
 import { v4 as uuidv4 } from "uuid";
 import { fileURLToPath } from "url";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
+app.use(cors({ origin: "http://localhost:3000"}));
 
 // ---------------- WebSocket ----------------
 const wss = new WebSocketServer({ port: 8080 });
@@ -82,5 +84,10 @@ wss.on("connection", (ws) => {
   });
 });
 
-app.get("/", (_, res) => res.send("Multi-language compiler backend running"));
+app.get("/", (_, res) => res.json({ 
+  status: "running", 
+  message: "Multi-language compiler backend running",
+  websocket: "ws://localhost:8080",
+  supportedLanguages: ["cpp", "python", "java"]
+}));
 app.listen(3001, () => console.log("✅ Express on port 3001"));
