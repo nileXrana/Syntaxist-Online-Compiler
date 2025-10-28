@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import CodeEditor from "./components/CodeEditor";
 
 export default function Home() {
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("javascript");
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("java");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   return (
