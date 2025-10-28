@@ -157,13 +157,13 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
   return (
     <div>
       {/* // head : */}
-      <div className={`h-[5vh] flex ${isDarkMode ? 'bg-slate-800 text-white' : 'bg-gray-200 text-black'}`}>
+      <div className={`h-[5vh] flex ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-slate-300 text-black'}`}>
         <div className="w-[65vw] flex items-center border-r-3  justify-between pr-4">
-          <h1 className={`text-lg font-bold p-3 px-5 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-600 text-gray-100'}`}>
+          <h1 className={`text-lg font-bold p-3 px-5 ${isDarkMode ? 'bg-blue-700' : 'bg-blue-600 text-gray-100'}`}>
             {fileExtensions[selectedLanguage] || "Main.txt"}
           </h1>
           <div className="flex gap-10">
-            <button onClick={handleCopy} className={`flex items-center cursor-pointer ${isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}><FaCopy /></button>
+            <button onClick={handleCopy} className={`flex items-center cursor-pointer hover:scale-125 ${isDarkMode ? 'hover:text-blue-300 ' : 'hover:text-blue-600'}`}><FaCopy /></button>
             {/* run button */}
             <button
               onClick={handleRun}
@@ -178,7 +178,7 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
               {isRunning ? (
                 <AiOutlineLoading3Quarters className={`animate-spin ${isDarkMode ? 'text-white' : 'text-white'}`} />
               ) : (
-                <BiLogoPlayStore />
+                <BiLogoPlayStore className="hover:scale-125"/>
               )}
             </button>
           </div>
@@ -186,8 +186,8 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
         <div className="flex items-center justify-between w-[35vw] pl-3">
           <div className="font-semibold">Output</div>
           <div className="flex gap-5 items-center ">
-            <button onClick={handleCopyOutput} className={`cursor-pointer ${isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}><FaCopy /></button>
-            <button onClick={handleClearOutput} className={`p-2 px-3 font-semibold cursor-pointer ${isDarkMode ? 'hover:text-blue-100 bg-slate-700 ' : 'hover:text-slate-200 bg-slate-600 text-white'}`}>Clear</button>
+            <button onClick={handleCopyOutput} className={`cursor-pointer hover:scale-125 ${isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}><FaCopy /></button>
+            <button onClick={handleClearOutput} className={`p-2 px-3 font-semibold cursor-pointer ${isDarkMode ? 'hover:text-blue-100 bg-blue-700 ' : 'hover:text-slate-200 bg-blue-600 text-white'}`}>Clear</button>
           </div>
         </div>
       </div>
