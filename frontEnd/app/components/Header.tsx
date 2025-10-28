@@ -28,8 +28,7 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
 
   return (
     <div className='h-[8vh] flex items-center justify-between pr-3 py-5 bg-blue-700 text-white shadow-lg'>
-      {/* 2 less than editor's width */}
-      <div className='flex items-center justify-between w-[63vw]'>
+      <div className='flex items-center justify-between w-[65vw]'>
         <div className='font-bold text-xl tracking-tight flex items-center'>
           <Image src="/logo2.png" alt="Logo" width={60} height={60} className='border' />
           <div className='flex flex-col items-center justify-center'>
