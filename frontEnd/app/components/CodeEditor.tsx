@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import Editor, { OnChange, OnMount } from "@monaco-editor/react";
 import TerminalBox, { TerminalHandle } from "./Terminal";
 import React from 'react'
@@ -10,6 +10,10 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 interface CodeEditorProps {
   selectedLanguage: string;
   isDarkMode: boolean;
+}
+
+export interface CodeEditorHandle {
+  getCode: () => string;
 }
 
 // Default code templates for each language
@@ -94,12 +98,17 @@ const monacoLanguages: Record<string, string> = {
   rust: "rust"
 };
 
-const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
+const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLanguage, isDarkMode }, ref) => {
   const [code, setCode] = useState<string>(defaultCode[selectedLanguage] || "// write your code here...");
   const [output, setOutput] = useState<string>("");
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const terminalRef = useRef<TerminalHandle>(null);
   const [terminalKey, setTerminalKey] = useState<number>(0);
+
+  // Expose getCode method to parent
+  useImperativeHandle(ref, () => ({
+    getCode: () => code
+  }));
 
   // Update code when language changes
   useEffect(() => {
@@ -212,6 +221,8 @@ const CodeEditor = ({ selectedLanguage, isDarkMode }: CodeEditorProps) => {
 
     </div>
   )
-}
+});
 
-export default CodeEditor
+CodeEditor.displayName = "CodeEditor";
+
+export default CodeEditor;
