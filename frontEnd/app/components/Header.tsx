@@ -6,6 +6,7 @@ import { CiDark } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
 import { HiLightBulb } from "react-icons/hi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import Image from 'next/image';
 
 interface HeaderProps {
   selectedLanguage: string;
@@ -30,24 +31,24 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
       {/* 2 less than editor's width */}
         <div className='flex items-center justify-between w-[63vw]'>
             <div className='font-bold text-xl tracking-tight flex items-center gap-2'>
-                <span className='bg-white text-blue-700 px-3 py-1 rounded-lg shadow-md'>AI</span>
+                <Image src="/logo2.png" alt="Logo" width={60} height={60} className='border'/>
                 <span>Compiler</span>
             </div>
             
             {/* Analysis Buttons */}
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-3'>
                 <button
                     onClick={onComplexityClick}
-                    className='flex items-center gap-2 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105'
+                    className='cursor-pointer flex items-center gap-2 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110'
                     title='Analyze Time & Space Complexity'
                 >
                     <FiClock className='text-lg' />
-                    <span>TC/SC</span>
+                    <span>TC / SC</span>
                 </button>
                 <button
                     onClick={onSuggestionsClick}
-                    className='flex items-center gap-2 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105'
-                    title='Optimize Code (TC/SC)'
+                    className='cursor-pointer flex items-center gap-2 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110'
+                    title='Optimize Code with AI'
                 >
                     <AiOutlineThunderbolt className='text-lg' />
                     <span>Optimize</span>
