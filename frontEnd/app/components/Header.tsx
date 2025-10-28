@@ -87,10 +87,10 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
       </div>
       <div className='flex items-center justify-between gap-5'>
         {/* Language Selector with Icon */}
-        <div className='relative flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-800/50 backdrop-blur-sm border border-blue-500/50 hover:bg-blue-800/70 focus-within:ring-2 focus-within:ring-white/50 transition-all duration-200 shadow-md hover:shadow-lg'>
+        <div className='relative flex items-center gap-1 px-2 py-2 rounded-lg bg-blue-800/50 backdrop-blur-sm border border-blue-500/50 hover:bg-blue-800/70 focus-within:ring-2 focus-within:ring-white/50 transition-all duration-200 shadow-md hover:shadow-lg'>
           <LanguageIcon className='text-xl text-white' />
           <select
-            className='bg-transparent text-white font-medium font-serif cursor-pointer focus:outline-none appearance-none pr-2'
+            className='bg-transparent text-white font-medium pr-1 font-serif cursor-pointer focus:outline-none'
             value={selectedLanguage}
             onChange={handleLanguageChange}
           >
@@ -105,9 +105,6 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
             <option value="swift" className='bg-gray-800 text-white'>Swift</option>
             <option value="rust" className='bg-gray-800 text-white'>Rust</option>
           </select>
-          <svg className='w-4 h-4 text-white pointer-events-none' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
-          </svg>
         </div>
 
         <button
