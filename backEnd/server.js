@@ -48,6 +48,42 @@ wss.on("connection", (ws) => {
           dockerImage = "java-runner";
           execCmd = "javac Main.java && java Main";
           break;
+        case "javascript":
+          filename = "main.js";
+          dockerImage = "js-runner";
+          execCmd = "node main.js";
+          break;
+        case "go":
+          filename = "main.go";
+          dockerImage = "go-runner";
+          execCmd = "go run main.go";
+          break;
+        case "ruby":
+          filename = "main.rb";
+          dockerImage = "ruby-runner";
+          execCmd = "ruby main.rb";
+          break;
+        case "php":
+          filename = "main.php";
+          dockerImage = "php-runner";
+          execCmd = "php main.php";
+          break;
+        case "rust":
+          filename = "main.rs";
+          dockerImage = "rust-runner";
+          execCmd = "rustc main.rs -o main.out && ./main.out";
+          break;
+        case "swift":
+          filename = "main.swift";
+          dockerImage = "swift-runner";
+          execCmd = "swift main.swift";
+          break;
+        case "csharp":
+          filename = "Program.cs";
+          dockerImage = "csharp-runner";
+          // Create a temporary dotnet console project and replace Program.cs
+          execCmd = 'dotnet new console -o app --no-restore && mv Program.cs app/Program.cs || true && cd app && dotnet run';
+          break;
         default:
           return ws.send(JSON.stringify({ type: "error", data: "Unsupported language" }));
       }
@@ -88,6 +124,17 @@ app.get("/", (_, res) => res.json({
   status: "running", 
   message: "Multi-language compiler backend running",
   websocket: "ws://localhost:8080",
-  supportedLanguages: ["cpp", "python", "java"]
+  supportedLanguages: [
+    "python",
+    "javascript",
+    "cpp",
+    "java",
+    "go",
+    "ruby",
+    "php",
+    "csharp",
+    "swift",
+    "rust"
+  ]
 }));
 app.listen(3001, () => console.log("✅ Express on port 3001"));

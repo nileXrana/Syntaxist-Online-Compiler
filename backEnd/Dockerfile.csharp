@@ -1,0 +1,4 @@
+FROM mcr.microsoft.com/dotnet/sdk:7.0
+WORKDIR /workspace
+# C# runner - uses dotnet SDK. Note: dotnet new/run will create a temporary project for single-file programs.
+CMD ["/bin/bash"]

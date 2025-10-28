@@ -40,9 +40,7 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
                 <option value="ruby" className='bg-blue-900'>Ruby</option>
                 <option value="php" className='bg-blue-900'>PHP</option>
                 <option value="csharp" className='bg-blue-900'>C#</option>
-                <option value="typescript" className='bg-blue-900'>TypeScript</option>
                 <option value="swift" className='bg-blue-900'>Swift</option>
-                <option value="kotlin" className='bg-blue-900'>Kotlin</option>
                 <option value="rust" className='bg-blue-900'>Rust</option>
             </select>
             <button 

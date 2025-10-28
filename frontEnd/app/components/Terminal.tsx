@@ -204,10 +204,15 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
       const backendLang = langMap[lang] || lang;
 
       // Check if language is supported
-      if (!["cpp", "python", "java"].includes(backendLang)) {
+      const supportedLanguages = [
+        "cpp", "python", "java", "javascript", "typescript", 
+        "go", "ruby", "php", "csharp", "swift", "kotlin", "rust"
+      ];
+      
+      if (!supportedLanguages.includes(backendLang)) {
         term.clear();
-        term.write(`\x1b[31m[Error: ${lang} is not yet supported. Currently supported: C++, Python, Java]\x1b[0m\r\n`);
-        term.write(`\x1b[33m[Support for more languages coming soon!]\x1b[0m\r\n`);
+        term.write(`\x1b[31m[Error: ${lang} is not yet supported.]\x1b[0m\r\n`);
+        term.write(`\x1b[33m[Supported languages: Python, JavaScript, TypeScript, C++, Java, Go, Ruby, PHP, C#, Swift, Kotlin, Rust]\x1b[0m\r\n`);
         return;
       }
 
