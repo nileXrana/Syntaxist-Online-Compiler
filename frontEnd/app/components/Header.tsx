@@ -26,7 +26,7 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
   };
   
   return (
-    <div className='h-[8vh] flex items-center justify-between px-4 py-5 bg-blue-900 text-white shadow-lg'>
+    <div className='h-[8vh] flex items-center justify-between px-4 py-5 bg-blue-700 text-white shadow-lg'>
       {/* 2 less than editor's width */}
         <div className='flex items-center justify-between w-[63vw]'>
             <div className='font-bold text-xl tracking-tight flex items-center gap-2'>
