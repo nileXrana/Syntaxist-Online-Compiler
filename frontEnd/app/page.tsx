@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import Header from "./components/Header";
 import CodeEditor from "./components/CodeEditor";
 import AnalysisPopup from "./components/AnalysisPopup";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState<string>("java");
@@ -20,7 +21,10 @@ export default function Home() {
     const code = codeEditorRef.current?.getCode();
     
     if (!code || code.trim() === "") {
-      alert("Please write some code first!");
+      toast.warning("Please write some code first!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
       return;
     }
 
@@ -56,7 +60,10 @@ export default function Home() {
     const code = codeEditorRef.current?.getCode();
     
     if (!code || code.trim() === "") {
-      alert("Please write some code first!");
+      toast.warning("Please write some code first!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
       return;
     }
 

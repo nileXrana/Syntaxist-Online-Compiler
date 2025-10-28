@@ -6,6 +6,7 @@ import React from 'react'
 import { FaCopy } from "react-icons/fa";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 interface CodeEditorProps {
   selectedLanguage: string;
@@ -127,7 +128,10 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
-    alert("Code copied!");
+    toast.success("Code copied to clipboard!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   };
 
   const handleRun = async () => {
@@ -145,7 +149,10 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
   const handleCopyOutput = async () => {
     if (terminalRef.current) {
       terminalRef.current.copyTerminalContent();
-      alert("Terminal content copied!");
+      toast.success("Output copied to clipboard!", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     }
   };
 
