@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import CodeEditor from "./components/CodeEditor";
-import { Terminal } from "xterm";
 
 export default function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState<string>("javascript");
