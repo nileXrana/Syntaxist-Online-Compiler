@@ -53,7 +53,7 @@ const AnalysisPopup = ({ isOpen, onClose, title, content, isLoading, type }: Ana
             <div className="flex flex-col items-center justify-center py-12 space-y-4">
               <AiOutlineLoading3Quarters className="text-6xl text-blue-600 dark:text-blue-400 animate-spin" />
               <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">
-                Analyzing your code with AI...
+                Analyzing your code...
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 This may take a few seconds
