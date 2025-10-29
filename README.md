@@ -5,7 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 [![Docker](https://img.shields.io/badge/Docker-Enabled-blue)](https://www.docker.com/)
 
-> A powerful, AI-enhanced online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and intelligent code optimization.
+> A powerful, online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and intelligent code optimization.
 
 🌐 **Live Demo**: [syntaxist.com](https://syntaxist.com)
 
