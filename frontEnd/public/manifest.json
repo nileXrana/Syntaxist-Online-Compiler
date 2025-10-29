@@ -1,0 +1,67 @@
+{
+  "name": "Syntaxist - AI-Powered Online Compiler",
+  "short_name": "Syntaxist",
+  "description": "Free online code compiler with AI-powered complexity analysis. Run Python, JavaScript, C++, Java, Go, Rust, and more instantly.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e40af",
+  "theme_color": "#1e40af",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "developer tools",
+    "education",
+    "productivity",
+    "utilities"
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Python Compiler",
+      "short_name": "Python",
+      "description": "Open Python compiler",
+      "url": "/?lang=python",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "JavaScript Compiler",
+      "short_name": "JavaScript",
+      "description": "Open JavaScript compiler",
+      "url": "/?lang=javascript",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "C++ Compiler",
+      "short_name": "C++",
+      "description": "Open C++ compiler",
+      "url": "/?lang=cpp",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Java Compiler",
+      "short_name": "Java",
+      "description": "Open Java compiler",
+      "url": "/?lang=java",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

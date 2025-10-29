@@ -95,7 +95,41 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <main role="main" itemScope itemType="https://schema.org/WebApplication">
+      <meta itemProp="name" content="Syntaxist Online Compiler" />
+      <meta itemProp="description" content="AI-powered online code compiler supporting 10+ programming languages" />
+      <meta itemProp="applicationCategory" content="DeveloperApplication" />
+      <meta itemProp="operatingSystem" content="Web Browser" />
+      
+      {/* SEO Content - Hidden but crawlable */}
+      <div className="sr-only" aria-hidden="true">
+        <h1>Syntaxist - Free Online Code Compiler with AI Analysis</h1>
+        <p>
+          Run and execute code online in Python, JavaScript, C++, Java, Go, Rust, Ruby, PHP, Swift, and C#. 
+          Free online compiler with AI-powered time complexity and space complexity analysis.
+        </p>
+        <h2>Supported Programming Languages</h2>
+        <ul>
+          <li>Python Online Compiler - Run Python code instantly</li>
+          <li>JavaScript Online Compiler - Execute JavaScript in browser</li>
+          <li>C++ Online Compiler - Compile and run C++ programs</li>
+          <li>Java Online Compiler - Run Java code online</li>
+          <li>Go Programming Compiler - Execute Go language code</li>
+          <li>Rust Online Compiler - Run Rust programs</li>
+          <li>Ruby Online Compiler - Execute Ruby scripts</li>
+          <li>PHP Online Compiler - Run PHP code</li>
+          <li>Swift Online Compiler - Test Swift code</li>
+          <li>C# Online Compiler - Run C# programs</li>
+        </ul>
+        <h2>AI-Powered Features</h2>
+        <ul>
+          <li>Time Complexity Analysis - Automatic Big O notation calculation</li>
+          <li>Space Complexity Analysis - Memory usage optimization</li>
+          <li>Code Optimization - AI-powered suggestions to improve performance</li>
+          <li>Real-time Execution - Instant code compilation and output</li>
+        </ul>
+      </div>
+      
       <CodeEditor
         ref={codeEditorRef}
         selectedLanguage={selectedLanguage} 
@@ -117,6 +151,6 @@ export default function Home() {
         isLoading={isLoading}
         type={analysisType}
       />
-    </div>
+    </main>
   );
 }

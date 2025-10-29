@@ -1,0 +1,54 @@
+{
+  "name": "syntaxist-online-compiler",
+  "version": "1.0.0",
+  "description": "AI-powered online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and intelligent code optimization",
+  "keywords": [
+    "online-compiler",
+    "code-compiler",
+    "ide",
+    "code-editor",
+    "ai-powered",
+    "complexity-analysis",
+    "code-optimization",
+    "python-compiler",
+    "javascript-compiler",
+    "cpp-compiler",
+    "java-compiler",
+    "multi-language",
+    "webassembly",
+    "docker",
+    "websocket",
+    "nextjs",
+    "typescript",
+    "react",
+    "monaco-editor",
+    "xterm",
+    "gemini-ai"
+  ],
+  "author": {
+    "name": "Nilesh Rana",
+    "email": "contact@syntaxist.com",
+    "url": "https://syntaxist.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nileXrana/AI-Powered-Online-Compiler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nileXrana/AI-Powered-Online-Compiler/issues"
+  },
+  "homepage": "https://syntaxist.com",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "setup": "bash setup.sh",
+    "dev:frontend": "cd frontEnd && npm run dev",
+    "dev:backend": "cd backEnd && npm start",
+    "build:frontend": "cd frontEnd && npm run build",
+    "start:frontend": "cd frontEnd && npm start",
+    "install:all": "cd frontEnd && npm install && cd ../backEnd && npm install"
+  }
+}
