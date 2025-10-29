@@ -1,4 +1,4 @@
-# 🚀 Syntaxist - AI-Powered Online Code Compiler
+# Syntaxist - AI-Powered Online Code Compiler
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black)](https://nextjs.org/)
@@ -13,16 +13,16 @@
 
 ### 🎯 Core Capabilities
 - **Multi-Language Support**: Execute code in 10+ programming languages
-  - 🐍 Python
-  - 📜 JavaScript
-  - ➕ C++
-  - ☕ Java
-  - 🐹 Go
-  - 🦀 Rust
-  - 💎 Ruby
-  - 🐘 PHP
-  - 🕊️ Swift
-  - #️⃣ C#
+  - Python
+  - JavaScript
+  - C++
+  - Java
+  - Go
+  - Rust
+  - Ruby
+  - PHP
+  - Swift
+  - C#
 
 ### 🤖 AI-Powered Features
 - **Time & Space Complexity Analysis**: Get instant Big O notation analysis
@@ -53,7 +53,7 @@
 - **Containerization**: Docker (12 language-specific images)
 - **Process Management**: Child processes for code execution
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+ and npm
@@ -115,53 +115,6 @@ npm start
 └── setup.sh                # Docker images build script
 ```
 
-## 🎨 Features in Detail
-
-### Code Editor
-- Syntax highlighting for all supported languages
-- Auto-completion and IntelliSense
-- Line numbers and minimap
-- Multiple themes (light/dark)
-- Code snippets and templates
-
-### Terminal
-- Real-time output streaming
-- Interactive input support (stdin)
-- ANSI color support
-- Copy and clear functionality
-- Persistent state during execution
-
-### AI Analysis
-- **TC/SC Analysis**: Understand your algorithm's efficiency
-- **Optimization Suggestions**: Get AI-powered tips to improve code
-- **Real-time Feedback**: Instant analysis with Google Gemini
-
-## 🔐 Security
-
-- Docker containerization for isolated execution
-- Input sanitization and validation
-- Rate limiting on API endpoints
-- CORS configuration
-- Security headers (CSP, HSTS, X-Frame-Options)
-
-## 🌟 SEO Optimization
-
-- Comprehensive meta tags (50+ keywords)
-- Open Graph and Twitter Card support
-- Structured data (JSON-LD) for rich snippets
-- Sitemap and robots.txt
-- PWA support with manifest.json
-- Performance optimization (image optimization, compression)
-- Semantic HTML with schema.org markup
-
-## 📊 Performance
-
-- Server-side rendering (SSR) with Next.js
-- Code splitting and lazy loading
-- Image optimization (WebP, AVIF)
-- Gzip compression
-- CDN-ready architecture
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -180,7 +133,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Nilesh Rana**
 - GitHub: [@nileXrana](https://github.com/nileXrana)
-- Website: [syntaxist.com](https://syntaxist.com)
+- LinkedIn: [@nileXrana](https://www.linkedin.com/in/nileXrana)
+- Website: [nileshrana.me](https://nileshrana.me)
 
 ## 🙏 Acknowledgments
 
@@ -190,17 +144,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Docker for containerization
 - Next.js team for the amazing framework
 
-## 📧 Contact & Support
-
-- **Issues**: [GitHub Issues](https://github.com/nileXrana/AI-Powered-Online-Compiler/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/nileXrana/AI-Powered-Online-Compiler/discussions)
-
 ---
 
 <div align="center">
-  Made with ❤️ by the Syntaxist Team
+  Made with ❤️ by nileXrana
   
-  ⭐ Star us on GitHub — it motivates us a lot!
+  ⭐ Star on GitHub — it motivates a lot🔥
 </div>
 
 ## 🔑 Keywords
