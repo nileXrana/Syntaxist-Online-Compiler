@@ -14,9 +14,15 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:3000"}));
 
+// Create HTTP server from Express app
+const server = app.listen(3001, () => {
+  console.log("✅ Express on port 3001");
+  console.log("✅ WebSocket running on ws://localhost:3001");
+});
+
 // ---------------- WebSocket ----------------
-const wss = new WebSocketServer({ port: 8080 });
-console.log("✅ WebSocket running on ws://localhost:8080");
+// Attach WebSocket server to the same HTTP server
+const wss = new WebSocketServer({ server });
 
 wss.on("connection", (ws) => {
   console.log("Client connected");
@@ -123,7 +129,7 @@ wss.on("connection", (ws) => {
 app.get("/", (_, res) => res.json({ 
   status: "running", 
   message: "Multi-language compiler backend running",
-  websocket: "ws://localhost:8080",
+  websocket: "ws://localhost:3001",
   supportedLanguages: [
     "python",
     "javascript",
@@ -137,4 +143,3 @@ app.get("/", (_, res) => res.json({
     "rust"
   ]
 }));
-app.listen(3001, () => console.log("✅ Express on port 3001"));

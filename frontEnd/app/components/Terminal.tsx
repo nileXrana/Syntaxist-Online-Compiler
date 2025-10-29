@@ -229,7 +229,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
       term.write(`\x1b[36m> Running ${lang} code...\x1b[0m\r\n\r\n`);
 
       // Create WebSocket connection
-      const ws = new WebSocket("ws://localhost:8080");
+      const ws = new WebSocket("ws://compiler.nileshrana.me");
       socketRef.current = ws;
 
       ws.onopen = () => {
