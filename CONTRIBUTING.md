@@ -40,15 +40,6 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 See README.md for detailed setup instructions.
 
-## Styleguide
-
-### Git Commit Messages
-
-* Use the present tense ("Add feature" not "Added feature")
-* Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 72 characters or less
-* Reference issues and pull requests liberally after the first line
-
 ### TypeScript/JavaScript Styleguide
 
 * Use TypeScript for type safety
@@ -56,15 +47,6 @@ See README.md for detailed setup instructions.
 * Use meaningful variable names
 * Comment complex logic
 * Keep functions small and focused
-
-### CSS/Tailwind Styleguide
-
-* Use Tailwind utility classes
-* Follow mobile-first responsive design
-* Maintain consistent spacing using Tailwind's spacing scale
-* Use semantic color names
-
-## Additional Notes
 
 ### Issue and Pull Request Labels
 
@@ -74,4 +56,4 @@ See README.md for detailed setup instructions.
 * `good first issue` - Good for newcomers
 * `help wanted` - Extra attention is needed
 
-Thank you for contributing to Syntaxist! 
+Thank you for contributing to Syntaxist🙏
