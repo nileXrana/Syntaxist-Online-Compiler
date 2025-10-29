@@ -74,4 +74,4 @@ See README.md for detailed setup instructions.
 * `good first issue` - Good for newcomers
 * `help wanted` - Extra attention is needed
 
-Thank you for contributing to Syntaxist! 🚀
+Thank you for contributing to Syntaxist! 
