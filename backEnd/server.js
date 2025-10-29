@@ -129,7 +129,7 @@ wss.on("connection", (ws) => {
 app.get("/", (_, res) => res.json({ 
   status: "running", 
   message: "Multi-language compiler backend running",
-  websocket: "ws://localhost:3001",
+  websocket: "ws://localhost:5001",
   supportedLanguages: [
     "python",
     "javascript",
