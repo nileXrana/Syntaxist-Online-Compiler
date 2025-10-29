@@ -43,10 +43,11 @@ Provide a concise, technical analysis.`;
     const text = response.text();
 
     return NextResponse.json({ analysis: text });
-  } catch (error: any) {
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Failed to analyze code";
     console.error("Gemini API Error:", error);
     return NextResponse.json(
-      { error: error.message || "Failed to analyze code" },
+      { error: errorMessage },
       { status: 500 }
     );
   }

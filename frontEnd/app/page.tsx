@@ -14,7 +14,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [analysisType, setAnalysisType] = useState<'complexity' | 'suggestions' | 'optimize'>('complexity');
   
-  const codeEditorRef = useRef<any>(null);
+  const codeEditorRef = useRef<{ getCode: () => string } | null>(null);
 
   const handleComplexityAnalysis = async () => {
     // Get code from CodeEditor
@@ -48,8 +48,9 @@ export default function Home() {
       } else {
         setPopupContent(`**Error**: ${data.error || 'Failed to analyze code'}`);
       }
-    } catch (error: any) {
-      setPopupContent(`**Error**: ${error.message || 'Network error occurred'}`);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Network error occurred';
+      setPopupContent(`**Error**: ${errorMessage}`);
     } finally {
       setIsLoading(false);
     }
@@ -87,8 +88,9 @@ export default function Home() {
       } else {
         setPopupContent(`**Error**: ${data.error || 'Failed to analyze optimization'}`);
       }
-    } catch (error: any) {
-      setPopupContent(`**Error**: ${error.message || 'Network error occurred'}`);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Network error occurred';
+      setPopupContent(`**Error**: ${errorMessage}`);
     } finally {
       setIsLoading(false);
     }

@@ -1,10 +1,8 @@
 "use client";
 import React from 'react'
-import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
-import { HiLightBulb } from "react-icons/hi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { 
   SiPython, 

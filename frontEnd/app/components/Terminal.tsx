@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import "xterm/css/xterm.css";
+import type { Terminal } from "xterm";
 
 export interface TerminalHandle {
   copyTerminalContent: () => void;
@@ -16,12 +17,12 @@ interface TerminalBoxProps {
 
 const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode = true, output = "", selectedLanguage = "" }, ref) => {
   const terminalRef = useRef<HTMLDivElement>(null);
-  const termInstanceRef = useRef<any>(null);
+  const termInstanceRef = useRef<Terminal | null>(null);
   const previousOutputRef = useRef<string>("");
   const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    let term: any = null;
+    let term: Terminal | null = null;
     let handleResize: (() => void) | null = null;
 
     // dynamically import xterm and FitAddon on client only
@@ -74,7 +75,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
         const code = data.charCodeAt(0);
 
         // Send input to backend if WebSocket is connected
-        if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+        if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN && term) {
           
           // Echo input locally for immediate feedback
           // Docker stdin doesn't echo by default in non-TTY mode
@@ -117,7 +118,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
       termInstanceRef.current = null;
       previousOutputRef.current = "";
     };
-  }, [selectedLanguage]);
+  }, [selectedLanguage, isDarkMode]);
 
   // Update theme when isDarkMode changes without clearing terminal
   useEffect(() => {
@@ -244,14 +245,14 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
             // Write stdout to terminal
             try {
               term.write(message.data.replace(/\n/g, "\r\n"));
-            } catch (e) {
+            } catch {
               // Suppress xterm parsing errors
             }
           } else if (message.type === "stderr") {
             // Write stderr in red
             try {
               term.write(`\x1b[31m${message.data.replace(/\n/g, "\r\n")}\x1b[0m`);
-            } catch (e) {
+            } catch {
               // Suppress xterm parsing errors
             }
           } else if (message.type === "exit") {
@@ -259,7 +260,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
             const color = message.code === 0 ? "32" : "31"; // green for success, red for error
             try {
               term.write(`\r\n\x1b[${color}m[Process exited with code ${message.code}]\x1b[0m\r\n`);
-            } catch (e) {
+            } catch {
               // Suppress xterm parsing errors
             }
             ws.close();
@@ -267,7 +268,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
             // Error occurred
             try {
               term.write(`\r\n\x1b[31m[Error: ${message.data}]\x1b[0m\r\n`);
-            } catch (e) {
+            } catch {
               // Suppress xterm parsing errors
             }
             ws.close();

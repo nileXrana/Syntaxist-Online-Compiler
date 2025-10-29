@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { AiOutlineClose, AiOutlineLoading3Quarters, AiOutlineThunderbolt } from 'react-icons/ai';
-import { FiClock, FiDatabase } from 'react-icons/fi';
+import { FiClock } from 'react-icons/fi';
 import { HiLightBulb } from 'react-icons/hi';
 
 interface AnalysisPopupProps {
@@ -63,37 +63,37 @@ const AnalysisPopup = ({ isOpen, onClose, title, content, isLoading, type }: Ana
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <ReactMarkdown
                 components={{
-                  h1: ({ node, ...props }) => (
+                  h1: ({ ...props }) => (
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 pb-2 border-b-2 border-blue-500" {...props} />
                   ),
-                  h2: ({ node, ...props }) => (
+                  h2: ({ ...props }) => (
                     <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-6 mb-3 flex items-center gap-2" {...props} />
                   ),
-                  h3: ({ node, ...props }) => (
+                  h3: ({ ...props }) => (
                     <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mt-4 mb-2" {...props} />
                   ),
-                  p: ({ node, ...props }) => (
+                  p: ({ ...props }) => (
                     <p className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed" {...props} />
                   ),
-                  ul: ({ node, ...props }) => (
+                  ul: ({ ...props }) => (
                     <ul className="list-disc list-inside space-y-2 mb-4 ml-4" {...props} />
                   ),
-                  ol: ({ node, ...props }) => (
+                  ol: ({ ...props }) => (
                     <ol className="list-decimal list-inside space-y-2 mb-4 ml-4" {...props} />
                   ),
-                  li: ({ node, ...props }) => (
+                  li: ({ ...props }) => (
                     <li className="text-gray-700 dark:text-gray-300" {...props} />
                   ),
-                  code: ({ node, inline, ...props }: any) =>
-                    inline ? (
-                      <code className="px-2 py-1 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-blue-300 rounded font-mono text-sm" {...props} />
-                    ) : (
-                      <code className="block p-4 bg-gray-800 text-gray-100 rounded-lg overflow-x-auto font-mono text-sm my-4" {...props} />
-                    ),
-                  strong: ({ node, ...props }) => (
+                  code: ({ ...props }) => (
+                    <code className="px-2 py-1 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-blue-300 rounded font-mono text-sm" {...props} />
+                  ),
+                  pre: ({ ...props }) => (
+                    <pre className="block p-4 bg-gray-800 text-gray-100 rounded-lg overflow-x-auto font-mono text-sm my-4" {...props} />
+                  ),
+                  strong: ({ ...props }) => (
                     <strong className="font-bold text-gray-900 dark:text-white" {...props} />
                   ),
-                  blockquote: ({ node, ...props }) => (
+                  blockquote: ({ ...props }) => (
                     <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-400 my-4" {...props} />
                   ),
                 }}

@@ -121,9 +121,8 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
     setCode(value || "");
   };
 
-  const handleMount: OnMount = (editor, monaco) => {
+  const handleMount: OnMount = (editor) => {
     editor.focus(); // auto-focus on load
-    // console.log("Monaco mounted:", editor);
   };
 
   const handleCopy = async () => {
