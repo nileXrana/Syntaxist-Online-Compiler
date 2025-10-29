@@ -7,7 +7,7 @@
 
 > A powerful, online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and intelligent code optimization.
 
-🌐 **Live Demo**: [syntaxist.com](https://syntaxist.com)
+🌐 **Live Demo**: [syntaxist](https://syntaxist.vercel.app)
 
 ## ✨ Features
 
