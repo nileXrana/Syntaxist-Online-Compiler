@@ -4,7 +4,7 @@ echo "🚀 Setting up AI Compiler..."
 echo ""
 
 # Navigate to backend directory
-cd "$(dirname "$0")/backEnd" || exit 1
+# cd "$(dirname "$0")/backEnd" || exit 1
 
 echo "📦 Building Docker images..."
 echo ""
