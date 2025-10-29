@@ -12,12 +12,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000"}));
+app.use(cors({ origin: "https://syntaxist.nileshrana.me"}));
 
 // Create HTTP server from Express app
-const server = app.listen(3001, () => {
-  console.log("✅ Express on port 3001");
-  console.log("✅ WebSocket running on ws://localhost:3001");
+const server = app.listen(5001, () => {
+  console.log("✅ Express on port 5001");
+  console.log("✅ WebSocket running on ws://localhost:5001");
 });
 
 // ---------------- WebSocket ----------------
