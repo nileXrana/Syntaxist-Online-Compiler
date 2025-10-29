@@ -45,15 +45,6 @@ docker build -t js-runner -f Dockerfile.javascript . || {
 echo "✅ js-runner built successfully"
 echo ""
 
-# Build TypeScript runner
-echo "Building TypeScript runner..."
-docker build -t ts-runner -f Dockerfile.typescript . || {
-    echo "❌ Failed to build ts-runner"
-    exit 1
-}
-echo "✅ ts-runner built successfully"
-echo ""
-
 # Build Go runner
 echo "Building Go runner..."
 docker build -t go-runner -f Dockerfile.go . || {
