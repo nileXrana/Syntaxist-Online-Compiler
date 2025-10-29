@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Compiler",
+  title: "Syntaxist",
   description: "An AI-powered code compiler and executor supporting multiple programming languages.",
 };
 
