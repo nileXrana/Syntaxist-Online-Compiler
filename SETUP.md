@@ -105,13 +105,11 @@ Currently supported (with Docker execution):
 
 Coming soon:
 - ⏳ JavaScript/Node.js
-- ⏳ TypeScript
 - ⏳ Go
 - ⏳ Ruby
 - ⏳ PHP
 - ⏳ C#
 - ⏳ Swift
-- ⏳ Kotlin
 - ⏳ Rust
 
 ## Features
