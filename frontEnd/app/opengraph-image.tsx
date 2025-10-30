@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
  
-export const alt = 'Syntaxist - AI-Powered Online Compiler'
+export const alt = 'Syntaxist - Online Code Compiler'
 export const size = {
   width: 1200,
   height: 630,
@@ -54,7 +54,7 @@ export default async function Image() {
               maxWidth: '900px',
             }}
           >
-            AI-Powered Online Code Compiler
+            Online Code Compiler
           </p>
           <div
             style={{

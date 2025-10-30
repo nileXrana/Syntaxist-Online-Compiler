@@ -73,9 +73,9 @@ export const metadata: Metadata = {
     "coding practice",
     "programming practice"
   ],
-  authors: [{ name: "Syntaxist Team" }],
-  creator: "Syntaxist",
-  publisher: "Syntaxist",
+  authors: [{ name: "Nilesh Rana" }],
+  creator: "Nilesh Rana",
+  publisher: "Nilesh Rana",
   formatDetection: {
     email: false,
     address: false,
@@ -85,8 +85,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  // how ur link looks when shared on social media :
   openGraph: {
-    title: "Syntaxist - AI-Powered Online Code Compiler",
+    title: "Syntaxist - Online Code Compiler",
     description: "Free online code compiler with AI-powered complexity analysis. Run Python, JavaScript, C++, Java, Go, Rust, and more instantly with real-time execution.",
     url: 'https://syntaxist.nileshrana.me',
     siteName: 'Syntaxist',
@@ -103,10 +104,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Syntaxist - AI-Powered Online Code Compiler',
+    title: 'Syntaxist - Online Code Compiler',
     description: 'Free online code compiler with AI-powered complexity analysis. Run code in 10+ languages instantly.',
     images: ['/twitter-image.png'],
-    creator: '@syntaxist',
+    creator: '@nilesh_rana',
   },
   robots: {
     index: true,
@@ -151,7 +152,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="format-detection" content="telephone=no" />
-        <link rel="canonical" href="https://syntaxist.com" />
+        <link rel="canonical" href="https://syntaxist.nileshrana.me" />
         
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -173,8 +174,8 @@ export default function RootLayout({
                 priceCurrency: 'USD',
               },
               description: 'AI-powered online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and code optimization.',
-              url: 'https://syntaxist.com',
-              screenshot: 'https://syntaxist.com/og-image.png',
+              url: 'https://syntaxist.nileshrana.me',
+              screenshot: 'https://syntaxist.nileshrana.me/logo2.png',
               aggregateRating: {
                 '@type': 'AggregateRating',
                 ratingValue: '4.8',
@@ -232,11 +233,11 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Syntaxist',
-              url: 'https://syntaxist.com',
-              logo: 'https://syntaxist.com/logo2.png',
+              url: 'https://syntaxist.nileshrana.me',
+              logo: 'https://syntaxist.nileshrana.me/logo2.png',
               sameAs: [
                 'https://twitter.com/syntaxist',
-                'https://github.com/nileXrana/AI-Powered-Online-Compiler',
+                'https://github.com/nileXrana/Syntaxist-Online-Compiler',
               ],
             }),
           }}
@@ -254,7 +255,7 @@ export default function RootLayout({
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://syntaxist.com',
+                  item: 'https://syntaxist.nileshrana.me/',
                 },
               ],
             }),

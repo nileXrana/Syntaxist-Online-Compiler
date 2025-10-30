@@ -64,8 +64,8 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/nileXrana/AI-Powered-Online-Compiler.git
-cd AI-Powered-Online-Compiler
+git clone https://github.com/nileXrana/Syntaxist-Online-Compiler.git
+cd Syntaxist-Online-Compiler
 ```
 
 2. **Build Docker images**

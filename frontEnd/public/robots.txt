@@ -6,7 +6,7 @@ Allow: /
 # Disallow: /admin/
 
 # Sitemaps
-Sitemap: https://syntaxist.com/sitemap.xml
+Sitemap: https://syntaxist.nileshrana.me/sitemap.xml
 
 # Specific bots
 User-agent: Googlebot

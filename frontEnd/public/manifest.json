@@ -1,7 +1,7 @@
 {
-  "name": "Syntaxist - AI-Powered Online Compiler",
+  "name": "Syntaxist - Online Code Compiler",
   "short_name": "Syntaxist",
-  "description": "Free online code compiler with AI-powered complexity analysis. Run Python, JavaScript, C++, Java, Go, Rust, and more instantly.",
+  "description": "online code compiler with AI-powered complexity analysis. Run Python, JavaScript, C++, Java, Go, Rust, and more instantly.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e40af",

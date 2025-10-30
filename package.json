@@ -1,7 +1,7 @@
 {
   "name": "syntaxist-online-compiler",
   "version": "1.0.0",
-  "description": "AI-powered online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and intelligent code optimization",
+  "description": "online code compiler supporting 10+ programming languages with real-time execution, complexity analysis, and intelligent code optimization",
   "keywords": [
     "online-compiler",
     "code-compiler",
@@ -27,18 +27,18 @@
   ],
   "author": {
     "name": "Nilesh Rana",
-    "email": "contact@syntaxist.com",
-    "url": "https://syntaxist.com"
+    "email": "imp.communicate@gmail.com",
+    "url": "https://nileshrana.me"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nileXrana/AI-Powered-Online-Compiler.git"
+    "url": "https://github.com/nileXrana/Syntaxist-Online-Compiler.git"
   },
   "bugs": {
-    "url": "https://github.com/nileXrana/AI-Powered-Online-Compiler/issues"
+    "url": "https://github.com/nileXrana/Syntaxist-Online-Compiler/issues"
   },
-  "homepage": "https://syntaxist.com",
+  "homepage": "https://syntaxist.nileshrana.me",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
