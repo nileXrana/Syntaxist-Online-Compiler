@@ -24,8 +24,15 @@ const server = app.listen(5001, () => {
 // Attach WebSocket server to the same HTTP server
 const wss = new WebSocketServer({ server });
 
-wss.on("connection", (ws) => {
-  console.log("Client connected");
+const allowedOrigin = "https://syntaxist.nileshrana.me";
+
+wss.on("connection", (ws,req) => {
+  const origin = req.headers.origin
+  if (origin !== allowedOrigin) {
+    ws.close(1008, "Unauthorized origin");
+    return;
+  }
+  console.log("Client connected: ",origin);
   let proc = null;
 
   ws.on("message", async (msg) => {
