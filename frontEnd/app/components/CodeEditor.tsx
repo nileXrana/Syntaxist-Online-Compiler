@@ -19,20 +19,20 @@ export interface CodeEditorHandle {
 
 // Default code templates for each language
 const defaultCode: Record<string, string> = {
-  python: `# Welcome to AI Compiler
-print("Welcome to AI Compiler")`,
-  javascript: `// Welcome to AI Compiler
-console.log("Welcome to AI Compiler");`,
+  python: `# Welcome to Syntaxist-Online Compiler
+print("Welcome to Syntaxist-Online Compiler")`,
+  javascript: `// Welcome to Syntaxist-Online Compiler
+console.log("Welcome to Syntaxist-Online Compiler");`,
   cpp: `#include <iostream>
 using namespace std;
 
 int main() {
-    cout << "Welcome to AI Compiler" << endl;
+    cout << "Welcome to Syntaxist-Online Compiler" << endl;
     return 0;
 }`,
   java: `public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to AI Compiler");
+        System.out.println("Welcome to Syntaxist-Online Compiler");
     }
 }`,
   go: `package main
@@ -40,30 +40,30 @@ int main() {
 import "fmt"
 
 func main() {
-    fmt.Println("Welcome to AI Compiler")
+    fmt.Println("Welcome to Syntaxist-Online Compiler")
 }`,
-  ruby: `# Welcome to AI Compiler
-puts "Welcome to AI Compiler"`,
+  ruby: `# Welcome to Syntaxist-Online Compiler
+puts "Welcome to Syntaxist-Online Compiler"`,
   php: `<?php
-// Welcome to AI Compiler
-echo "Welcome to AI Compiler";
+// Welcome to Syntaxist-Online Compiler
+echo "Welcome to Syntaxist-Online Compiler";
 ?>`,
   csharp: `using System;
 
 class Program {
     static void Main() {
-        Console.WriteLine("Welcome to AI Compiler");
+        Console.WriteLine("Welcome to Syntaxist-Online Compiler");
     }
 }`,
-  typescript: `// Welcome to AI Compiler
-console.log("Welcome to AI Compiler");`,
-  swift: `// Welcome to AI Compiler
-print("Welcome to AI Compiler")`,
+  typescript: `// Welcome to Syntaxist-Online Compiler
+console.log("Welcome to Syntaxist-Online Compiler");`,
+  swift: `// Welcome to Syntaxist-Online Compiler
+print("Welcome to Syntaxist-Online Compiler")`,
   kotlin: `fun main() {
-    println("Welcome to AI Compiler")
+    println("Welcome to Syntaxist-Online Compiler")
 }`,
   rust: `fn main() {
-    println!("Welcome to AI Compiler");
+    println!("Welcome to Syntaxist-Online Compiler");
 }`
 };
 
