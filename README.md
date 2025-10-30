@@ -91,8 +91,8 @@ npm start
 
 5. **Access the application**
 - Frontend: http://localhost:3000
-- Backend API: http://localhost:3001
-- WebSocket: ws://localhost:8080
+- Backend: http://localhost:5001
+- WebSocket: ws://localhost:5001
 
 ## 📦 Project Structure
 
