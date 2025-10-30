@@ -21,10 +21,22 @@ const server = app.listen(5001, () => {
 });
 
 // ---------------- WebSocket ----------------
-// Attach WebSocket server to the same HTTP server
-const wss = new WebSocketServer({ server });
-
+// Attach WebSocket server to the same HTTP server and check origin :
 const allowedOrigin = "https://syntaxist.nileshrana.me";
+const wss = new WebSocketServer({ noServer: true });
+
+server.on("upgrade", (req, socket, head) => {
+  const origin = req.headers.origin;
+  if (origin !== allowedOrigin) {
+    socket.write("HTTP/1.1 403 Forbidden\r\n\r\n");
+    socket.destroy();
+    return;
+  }
+
+  wss.handleUpgrade(req, socket, head, (ws) => {
+    wss.emit("connection", ws, req);
+  });
+});
 
 wss.on("connection", (ws,req) => {
   const origin = req.headers.origin
