@@ -56,7 +56,7 @@ const Header = ({ selectedLanguage, setSelectedLanguage, isDarkMode, setIsDarkMo
     <div className='h-[8vh] flex items-center justify-between pr-3 py-5 bg-blue-700 text-white shadow-lg'>
       <div className='flex items-center justify-between w-[65vw]'>
         <div className='text-xl tracking-tight flex items-center'>
-          <Image src="/logo2.png" alt="Logo" width={60} height={60} className='border' />
+          <Image priority src="/logo2.png" alt="Logo" width={60} height={60} className='border' />
           <div className='flex flex-col items-center justify-center font-serif'>
             <span className='scale-105'>Syntaxist</span>
             <span className='text-xs scale-95'>Online Compiler</span>

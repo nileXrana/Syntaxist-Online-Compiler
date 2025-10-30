@@ -81,20 +81,20 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://syntaxist.com'),
+  metadataBase: new URL('https://syntaxist.nileshrana.me'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Syntaxist - AI-Powered Online Code Compiler",
     description: "Free online code compiler with AI-powered complexity analysis. Run Python, JavaScript, C++, Java, Go, Rust, and more instantly with real-time execution.",
-    url: 'https://syntaxist.com',
+    url: 'https://syntaxist.nileshrana.me',
     siteName: 'Syntaxist',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        url: 'https://syntaxist.nileshrana.me/logo2.png',
+        width: 20,
+        height: 20,
         alt: 'Syntaxist Online Compiler',
       }
     ],
@@ -119,15 +119,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
-    ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
   },
   manifest: '/manifest.json',
   verification: {
