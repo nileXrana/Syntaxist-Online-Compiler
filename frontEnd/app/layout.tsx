@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Syntaxist - AI-Powered Online Code Compiler | Run Code in 10+ Languages",
+    default: "Syntaxist - Online Code Compiler | Run Code in 10+ Languages",
     template: "%s | Syntaxist Online Compiler"
   },
   description: "Free online code compiler with AI-powered complexity analysis and optimization. Run Python, JavaScript, C++, Java, Go, Rust, Ruby, PHP, Swift, C# code instantly. Real-time execution, TC/SC analysis, and smart code suggestions.",
