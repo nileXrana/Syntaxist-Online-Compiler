@@ -99,7 +99,7 @@ export default function Home() {
   return (
     <main role="main" itemScope itemType="https://schema.org/WebApplication">
       <meta itemProp="name" content="Syntaxist Online Compiler" />
-      <meta itemProp="description" content="AI-powered online code compiler supporting 10+ programming languages" />
+      <meta itemProp="description" content="online code compiler supporting 10+ programming languages" />
       <meta itemProp="applicationCategory" content="DeveloperApplication" />
       <meta itemProp="operatingSystem" content="Web Browser" />
       
