@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     template: "%s | Syntaxist Online Compiler"
   },
   description: "Free online code compiler with AI-powered complexity analysis and optimization. Run Python, JavaScript, C++, Java, Go, Rust, Ruby, PHP, Swift, C# code instantly. Real-time execution, TC/SC analysis, and smart code suggestions.",
+  icons: {
+    icon: '/favicon.ico',
+  },
   keywords: [
     "online compiler",
     "code compiler",
