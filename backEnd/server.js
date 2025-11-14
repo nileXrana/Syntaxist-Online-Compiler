@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "https://syntaxist.nileshrana.me"}));
+app.use(cors());
 
 // Create HTTP server from Express app
 const server = app.listen(5001, () => {
@@ -21,30 +21,17 @@ const server = app.listen(5001, () => {
 });
 
 // ---------------- WebSocket ----------------
-// Attach WebSocket server to the same HTTP server and check origin :
-const allowedOrigin = "https://syntaxist.nileshrana.me";
+// Attach WebSocket server to the same HTTP server
 const wss = new WebSocketServer({ noServer: true });
 
 server.on("upgrade", (req, socket, head) => {
-  const origin = req.headers.origin;
-  if (origin !== allowedOrigin) {
-    socket.write("HTTP/1.1 403 Forbidden\r\n\r\n");
-    socket.destroy();
-    return;
-  }
-
   wss.handleUpgrade(req, socket, head, (ws) => {
     wss.emit("connection", ws, req);
   });
 });
 
 wss.on("connection", (ws,req) => {
-  const origin = req.headers.origin
-  if (origin !== allowedOrigin) {
-    ws.close(1008, "Unauthorized origin");
-    return;
-  }
-  console.log("Client connected: ",origin);
+  console.log("Client connected from:", req.headers.origin || "unknown origin");
   let proc = null;
 
   ws.on("message", async (msg) => {
