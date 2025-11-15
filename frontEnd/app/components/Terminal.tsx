@@ -7,19 +7,22 @@ export interface TerminalHandle {
   copyTerminalContent: () => void;
   clearTerminal: () => void;
   runCode: (code: string, lang: string) => void;
+  setOnLoadingChange?: (callback: (isLoading: boolean) => void) => void;
 }
 
 interface TerminalBoxProps {
   isDarkMode?: boolean;
   output?: string;
   selectedLanguage?: string;
+  onLoadingChange?: (isLoading: boolean) => void;
 }
 
-const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode = true, output = "", selectedLanguage = "" }, ref) => {
+const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode = true, output = "", selectedLanguage = "", onLoadingChange }, ref) => {
   const terminalRef = useRef<HTMLDivElement>(null);
   const termInstanceRef = useRef<Terminal | null>(null);
   const previousOutputRef = useRef<string>("");
   const socketRef = useRef<WebSocket | null>(null);
+  const onLoadingChangeRef = useRef<((isLoading: boolean) => void) | undefined>(onLoadingChange);
 
   useEffect(() => {
     let term: Terminal | null = null;
@@ -160,6 +163,9 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
 
   // Expose copy, clear and run methods to parent
   useImperativeHandle(ref, () => ({
+    setOnLoadingChange: (callback: (isLoading: boolean) => void) => {
+      onLoadingChangeRef.current = callback;
+    },
     copyTerminalContent: () => {
       const term = termInstanceRef.current;
       if (term) {
@@ -214,6 +220,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
         term.clear();
         term.write(`\x1b[31m[Error: ${lang} is not yet supported.]\x1b[0m\r\n`);
         term.write(`\x1b[33m[Supported languages: Python, JavaScript, TypeScript, C++, Java, Go, Ruby, PHP, C#, Swift, Kotlin, Rust]\x1b[0m\r\n`);
+        onLoadingChangeRef.current?.(false);
         return;
       }
 
@@ -242,6 +249,8 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
           const message = JSON.parse(event.data);
 
           if (message.type === "stdout") {
+            // Stop loading when first output is received
+            onLoadingChangeRef.current?.(false);
             // Write stdout to terminal
             try {
               term.write(message.data.replace(/\n/g, "\r\n"));
@@ -249,6 +258,8 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
               // Suppress xterm parsing errors
             }
           } else if (message.type === "stderr") {
+            // Stop loading when error output is received
+            onLoadingChangeRef.current?.(false);
             // Write stderr in red
             try {
               term.write(`\x1b[31m${message.data.replace(/\n/g, "\r\n")}\x1b[0m`);
@@ -265,6 +276,8 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
             }
             ws.close();
           } else if (message.type === "error") {
+            // Stop loading on error
+            onLoadingChangeRef.current?.(false);
             // Error occurred
             try {
               term.write(`\r\n\x1b[31m[Error: ${message.data}]\x1b[0m\r\n`);
@@ -280,6 +293,7 @@ const TerminalBox = forwardRef<TerminalHandle, TerminalBoxProps>(({ isDarkMode =
 
       ws.onerror = (error) => {
         console.error("WebSocket error:", error);
+        onLoadingChangeRef.current?.(false);
         term.write("\r\n\x1b[31m[WebSocket connection error - Make sure backend server is running]\x1b[0m\r\n");
       };
 

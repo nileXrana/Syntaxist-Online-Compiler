@@ -136,13 +136,13 @@ const CodeEditor = forwardRef<CodeEditorHandle, CodeEditorProps>(({ selectedLang
   const handleRun = async () => {
     setIsRunning(true);
 
+    // Setup callback to stop loading when output is received
+    terminalRef.current?.setOnLoadingChange?.((isLoading) => {
+      setIsRunning(isLoading);
+    });
+
     // Run code via WebSocket
     terminalRef.current?.runCode(code, selectedLanguage);
-
-    // Set isRunning to false after a short delay to show the loading animation
-    setTimeout(() => {
-      setIsRunning(false);
-    }, 500);
   };
 
   const handleCopyOutput = async () => {
